@@ -1,0 +1,19 @@
+To use serial port to get data using qt:
+	first get the available serial infomation
+		qDebug() << "Number of ports: " << QSerialPortInfo::availablePorts().length() << "\n";
+		foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts()){
+			qDebug() << "Description: " << serialPortInfo.description() << "\n";
+			qDebug() << "Has vendor id?: " << serialPortInfo.hasVendorIdentifier() << "\n";
+			qDebug() << "Vendor ID: " << serialPortInfo.vendorIdentifier() << "\n";
+			qDebug() << "Has product id?: " << serialPortInfo.hasProductIdentifier() << "\n";
+			qDebug() << "Product ID: " << serialPortInfo.productIdentifier() << "\n";
+			qDebug() << "Product Name: " << serialPortInfo.portName() << "\n";
+		}
+		
+	QSerialPortInfo::availablePorts().length() this will get the number of available ports
+	serialPortInfo.description()  this return the description of the port
+	serialPortInfo.hasVendorIdentifier()  this return true if the vendor has vendor identification number, else false
+	serialPortInfo.vendorIdentifier()   this return the vendor identification number
+	serialPortInfo.hasProductIdentifier()   this return true if it has product identification number, else false
+	productIdentifier()  this return the product identification number
+	serialPortInfo.portName() this return the name of the port
